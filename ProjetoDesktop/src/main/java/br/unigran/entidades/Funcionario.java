@@ -14,8 +14,7 @@ public class Funcionario implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     String nome;
-    String cpf;
-    String endereco;
+    String CPF;
     boolean sexo;
     String telefone;
     String email;
@@ -23,7 +22,6 @@ public class Funcionario implements Serializable{
     Date dataAdmissao;
     float salario;
     String cargo;
-    String login;
     String senha;
 
     public String getNome() {
@@ -34,22 +32,13 @@ public class Funcionario implements Serializable{
         this.nome = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCPF() {
+        return CPF;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCPF(String CPF) {
+        this.CPF = CPF;
     }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
     public boolean isSexo() {
         return sexo;
     }
@@ -98,14 +87,6 @@ public class Funcionario implements Serializable{
         this.cargo = cargo;
     }
 
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
     public String getSenha() {
         return senha;
     }
@@ -121,6 +102,5 @@ public class Funcionario implements Serializable{
     public void setId(Integer id) {
         this.id = id;
     }
-    
-    
+
 }
