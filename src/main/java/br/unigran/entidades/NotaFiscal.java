@@ -17,7 +17,7 @@ public class NotaFiscal implements Serializable{
     @Column(name="CNPJ")
     private String cnpj;
     @Column(name="Nome")
-    
+    private String nome;
     @ManyToOne
     private Endereco endereço;
     @OneToOne
@@ -64,5 +64,13 @@ public class NotaFiscal implements Serializable{
 
     public void setSaida(Saida saida) {
         this.saida = saida;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
