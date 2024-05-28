@@ -17,7 +17,7 @@ public class NotaFiscal implements Serializable{
     @Column(name="CNPJ")
     private String cnpj;
     @Column(name="Nome")
-    
+    private String nome;
     @ManyToOne
     private Endereco endereço;
     @OneToOne
