@@ -19,6 +19,7 @@ public class NotaFiscal implements Serializable{
     @Column(name="Nome")
     private String nome;
 
+
     public String getNome() {
         return nome;
     }
@@ -72,5 +73,13 @@ public class NotaFiscal implements Serializable{
 
     public void setSaida(Saida saida) {
         this.saida = saida;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
