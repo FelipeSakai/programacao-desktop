@@ -2,6 +2,7 @@ package br.unigran.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,16 +14,22 @@ public class Funcionario implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(name="Nome")
     String nome;
+    @Column(name="CPF")
     String CPF;
+    @Column(name="Sexo")
     boolean sexo;
+    @Column(name = "Telefone")
     String telefone;
+    @Column(name ="Email")
     String email;
     @Temporal(javax.persistence.TemporalType.DATE)
     Date dataAdmissao;
+    @Column(name="Salario")
     float salario;
+    @Column(name="Cargo")
     String cargo;
-    String senha;
 
     public String getNome() {
         return nome;
@@ -86,15 +93,7 @@ public class Funcionario implements Serializable{
     public void setCargo(String cargo) {
         this.cargo = cargo;
     }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
+    
     public Integer getId() {
         return id;
     }

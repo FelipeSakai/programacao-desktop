@@ -16,7 +16,6 @@ public class FuncionarioDTO extends DTO {
     public Date dataAdmissaoFuncionario;
     public float salarioFuncionario;
     public String cargoFuncionario;
-    public String senhaFuncionario;
     
     @Override
     public Funcionario builder(){
@@ -30,7 +29,6 @@ public class FuncionarioDTO extends DTO {
         funcionario.setDataAdmissao(dataAdmissaoFuncionario);
         funcionario.setSalario(salarioFuncionario);
         funcionario.setCargo(cargoFuncionario);
-        funcionario.setSenha(senhaFuncionario);
         return funcionario;
     }
     public List getListaDados(List<Funcionario> dados) {
@@ -52,7 +50,6 @@ public class FuncionarioDTO extends DTO {
         dto.dataAdmissaoFuncionario=f.getDataAdmissao();
         dto.salarioFuncionario=f.getSalario();
         dto.cargoFuncionario=f.getCargo();
-        dto.senhaFuncionario=f.getSenha();
                 
                 
         return dto;
