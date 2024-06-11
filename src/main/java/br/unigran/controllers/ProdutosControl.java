@@ -1,7 +1,7 @@
 package br.unigran.controllers;
 
 import br.unigran.dto.DTO;
-import br.unigran.dto.ProdutoDTO;
+import br.unigran.dto.ProdutosDTO;
 import br.unigran.entidades.Produtos;
 import br.unigran.persistencia.produtos.ProdutosDao;
 import br.unigran.persistencia.produtos.ProdutosImpl;
@@ -39,19 +39,19 @@ public class ProdutosControl implements Controller {
 
     @Override
     public Object[] getDados(DTO o) {
-        ProdutoDTO dto = (ProdutoDTO) o;
-        return new Object[]{dto.id, dto.codProd, dto.fornecedor, dto.categoria, dto.valorVenda, dto.valorCompra, dto.quantidade, dto.minQuantidade};
+        ProdutosDTO dto = (ProdutosDTO) o;
+        return new Object[]{dto.idProduto, dto.codProduto, dto.fornecedorProduto, dto.categoriaProduto, dto.valorVendaProduto, dto.valorCompraProduto, dto.quantidadeProduto, dto.minQuantidadeProduto};
     }
 
     @Override
-    public List getListaDados() {
+    public List<ProdutosDTO> getListaDados() {
         List<Produtos> dados = dao.listar(Produtos.class);
-        ProdutoDTO produtoDTO = new ProdutoDTO();
-        return produtoDTO.getListaDados(dados);
+        ProdutosDTO produtosDTO = new ProdutosDTO();
+        return produtosDTO.getListaDados(dados);
     }
 
     @Override
     public void remover(DTO dto) {
-        dao.remove(((ProdutoDTO) dto).builder());
+        dao.remove(((ProdutosDTO) dto).builder());
     }
 }

@@ -23,7 +23,6 @@ public class SaidaControl implements Controller {
     private Saida builder(String[] valores) throws Exception {
         Saida saida = new Saida();
         saida.setMotivo(valores[0]);
-        // Supondo que os valores[1] seja a data de saída no formato "yyyy-MM-dd"
         saida.setDtSaida(java.sql.Date.valueOf(valores[1]));
         return saida;
     }
@@ -36,7 +35,7 @@ public class SaidaControl implements Controller {
     @Override
     public Object[] getDados(DTO o) {
         SaidaDTO dto = (SaidaDTO) o;
-        return new Object[]{dto.id, dto.motivo, dto.dtSaida};
+        return new Object[]{dto.id, dto.motivoSaida, dto.dtSaida};
     }
 
     @Override

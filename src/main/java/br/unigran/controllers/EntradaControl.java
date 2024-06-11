@@ -13,7 +13,7 @@ public class EntradaControl implements Controller {
 
     @Override
     public void salvar(DTO dto) {
-        dao.atualiza(dto.builder());
+        dao.atualiza(((EntradaDTO) dto).builder());
     }
 
     public void salvar(String[] entrada) throws Exception {
@@ -36,11 +36,11 @@ public class EntradaControl implements Controller {
     @Override
     public Object[] getDados(DTO o) {
         EntradaDTO dto = (EntradaDTO) o;
-        return new Object[]{dto.id, dto.dataEntrada, dto.notaFiscal, dto.secao};
+        return new Object[]{dto.idEntrada, dto.dataEntradaEntrada, dto.notaFiscalEntrada, dto.SecaoEntrada};
     }
 
     @Override
-    public List getListaDados() {
+    public List<EntradaDTO> getListaDados() {
         List<Entrada> dados = dao.listar(Entrada.class);
         EntradaDTO entradaDTO = new EntradaDTO();
         return entradaDTO.getListaDados(dados);

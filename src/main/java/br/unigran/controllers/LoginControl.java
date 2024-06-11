@@ -13,7 +13,7 @@ public class LoginControl implements Controller {
 
     @Override
     public void salvar(DTO dto) {
-        dao.atualiza(dto.builder());
+        dao.atualiza(((LoginDTO) dto).builder());
     }
 
     public void salvar(String[] login) throws Exception {
@@ -35,11 +35,11 @@ public class LoginControl implements Controller {
     @Override
     public Object[] getDados(DTO o) {
         LoginDTO dto = (LoginDTO) o;
-        return new Object[]{dto.id, dto.login, dto.senha};
+        return new Object[]{dto.idLogin, dto.loginLogin, dto.senhaLogin};
     }
 
     @Override
-    public List getListaDados() {
+    public List<LoginDTO> getListaDados() {
         List<Login> dados = dao.listar(Login.class);
         LoginDTO loginDTO = new LoginDTO();
         return loginDTO.getListaDados(dados);

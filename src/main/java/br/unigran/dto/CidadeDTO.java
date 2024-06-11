@@ -11,7 +11,7 @@ public class CidadeDTO extends DTO {
     @Override
     public Cidade builder() {
         Cidade cidade = new Cidade();
-        cidade.setId(id != null ? Long.valueOf(id) : null);
+        cidade.setId(idCidade); 
         cidade.setNome(nomeCidade);
         return cidade;
     }
@@ -26,7 +26,6 @@ public class CidadeDTO extends DTO {
 
     private CidadeDTO converte(Cidade cidade) {
         CidadeDTO dto = new CidadeDTO();
-        dto.id = cidade.getId() != null ? cidade.getId().toString() : null;
         dto.idCidade = cidade.getId();
         dto.nomeCidade = cidade.getNome();
         return dto;
