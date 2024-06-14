@@ -2,12 +2,20 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
   <persistence-unit name="br.unigran_ProjetoDesktop_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>br.unigran.entidades.Cidade</class>
+    <class>br.unigran.entidades.Endereco</class>
+    <class>br.unigran.entidades.Entrada</class>
+    <class>br.unigran.entidades.Funcionario</class>
+    <class>br.unigran.entidades.Login</class>
+    <class>br.unigran.entidades.NotaFiscal</class>
+    <class>br.unigran.entidades.Produtos</class>
+    <class>br.unigran.entidades.Saida</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
       <property name="javax.persistence.jdbc.user" value="postgres"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
       <property name="javax.persistence.jdbc.password" value=""/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
   <persistence-unit name="br.unigran_ProjetoDesktop_jar_1.0-SNAPSHOTPU2" transaction-type="RESOURCE_LOCAL">
