@@ -4,6 +4,11 @@
  */
 package br.unigran.view.app;
 
+import br.unigran.view.ViewPrincipal;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
 /**
  *
  * @author Suporte-OM
@@ -15,6 +20,25 @@ public class Entrada extends javax.swing.JFrame {
      */
     public Entrada() {
         initComponents();
+        setTitle("Entrada");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        JButton voltarButton = new JButton("Voltar");
+
+        voltarButton.addActionListener(e -> {
+            ViewPrincipal viewPrincipal = new ViewPrincipal();
+            viewPrincipal.setVisible(true);
+            dispose();
+        });
+
+        JPanel panel = new JPanel();
+        panel.add(voltarButton);
+
+        add(panel);
+
+        setVisible(true);
     }
 
     /**

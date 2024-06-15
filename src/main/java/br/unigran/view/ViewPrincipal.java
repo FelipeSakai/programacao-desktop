@@ -4,6 +4,17 @@
  */
 package br.unigran.view;
 
+import br.unigran.entidades.Entrada;
+import br.unigran.entidades.Saida;
+import br.unigran.view.app.Estoque;
+import br.unigran.view.app.NotaFiscal;
+import br.unigran.view.cadastro.CadastroCidade;
+import br.unigran.view.cadastro.CadastroFuncionario;
+import br.unigran.view.cadastro.CadastroProduto;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+
+
 /**
  *
  * @author Suporte-OM
@@ -15,6 +26,63 @@ public class ViewPrincipal extends javax.swing.JFrame {
      */
     public ViewPrincipal() {
         initComponents();
+        setTitle("View Principal");
+        setSize(600, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        // Inicialização dos componentes
+        JButton entradaButton = new JButton("Entrada");
+        JButton estoqueButton = new JButton("Estoque");
+        JButton cadastroCidadeButton = new JButton("Cadastro de Cidade");
+        JButton cadastroFuncionarioButton = new JButton("Cadastro de Funcionário");
+        JButton cadastroProdutoButton = new JButton("Cadastro de Produto");
+        JButton notaFiscalButton = new JButton("Nota Fiscal");
+        JButton saidaButton = new JButton("Saída");
+
+        // Adicionando ActionListeners aos botões
+        entradaButton.addActionListener(e -> {
+            Entrada entrada = new Entrada();
+            entrada.setVisible(true);
+            dispose();
+        });
+
+        estoqueButton.addActionListener(e -> {
+            Estoque estoque = new Estoque();
+            estoque.setVisible(true);
+            dispose();
+        });
+
+        cadastroCidadeButton.addActionListener(e -> {
+            CadastroCidade cadastroCidade = new CadastroCidade();
+            cadastroCidade.setVisible(true);
+            dispose();
+        });
+
+        cadastroFuncionarioButton.addActionListener(e -> {
+            CadastroFuncionario cadastroFuncionario = new CadastroFuncionario();
+            cadastroFuncionario.setVisible(true);
+            dispose();
+        });
+
+        cadastroProdutoButton.addActionListener(e -> {
+            CadastroProduto cadastroProduto = new CadastroProduto();
+            cadastroProduto.setVisible(true);
+            dispose();
+        });
+
+        notaFiscalButton.addActionListener(e -> {
+            NotaFiscal notaFiscal = new NotaFiscal();
+            notaFiscal.setVisible(true);
+            dispose();
+        });
+
+        saidaButton.addActionListener(e -> {
+            Saida saida = new Saida();
+            saida.setVisible(true);
+            dispose();
+        });
+
     }
 
     /**
@@ -154,6 +222,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        new ViewPrincipal();
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
